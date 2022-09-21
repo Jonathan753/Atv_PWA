@@ -1,0 +1,37 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engines D2win : Comparador de Documentos!</title>
+  </head>
+<body>
+<div class="container">
+    <div class="main-title">
+        <h1 data-aos="fade-up"
+        data-aos-duration="3000">Comparador de Documentos</h1>
+    </div>
+    <div class="main-content">
+        <p data-aos="fade-up" data-aos-duration="2000" >Compare vários documentos, busque irregularidades, tudo com apenas um click, envie seus arquivos que nossa engine irá comparar para você.</p>
+    </div>
+    <div class="main-illustration">
+        <img data-aos="fade-up" data-aos-duration="2000" src="assets/engineicons/comparador_illustration.png">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="2000" class="btns">
+        <div class="btn-test">
+            <a class="btn" (click)="scroll();">Teste</a>
+        </div>
+        <div class="txt-or">
+            <span>ou</span>
+        </div>
+        <div class="btn-buy">
+            <a routerLink="/plans" class="btn">Adquira já</a>
+        </div>
+    </div>
+</div>
+<div class="engine-test" id="target">
+    <app-engine-test></app-engine-test>
+</div>
+<div class="footer">
+    <app-footer></app-footer>
+</div> 
+</body>

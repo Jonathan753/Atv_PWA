@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos da Di2win : Escolha seu Plano!</title>
+</head>
+<body>
+  <div class="container">
+
+    <div class="engines-box">
+      <h1 data-aos="fade-down"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000">Selecione uma engine</h1>
+
+      <div class="engines">
+        <div data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" class="conversor" (click)="scroll()">
+          <img src="assets/engineicons/converter.png">
+          <h4>Conversor de Imagem/PDF</h4>
+        </div> <!-- conversor -->
+        <div data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" class="comparador" (click)="scroll()">
+          <img src="assets/engineicons/comparador.png">
+          <h4>Comparador de Documentos</h4>
+        </div> <!-- comparador -->
+        <div  data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" class="buscador" (click)="scroll();">
+          <img src="assets/engineicons/buscador.png">
+          <h4>Buscador</h4>
+        </div> <!-- buscador -->
+        <div data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" class="ocr" (click)="scroll()">
+          <img src="assets/engineicons/OCR.png">
+          <h4>OCR</h4>
+        </div> <!-- ocr -->
+      </div> <!-- engines -->
+
+    </div> <!-- engines-box -->
+
+    <div class="target">
+      <div class="planos" id="target" *ngIf="show">
+        <h1 data-aos="fade-down"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000">Escolha seu plano</h1>
+        <div class="select">
+          <div data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000" class="micro">
+            <h3>Microempresas</h3>
+            <div class="info">
+              <p>Vantagem 1</p>
+              <p>Vantagem 2</p>
+              <p>Vantagem 3</p>
+            </div>
+            <div class="buy">
+              <span>R$ 00,00</span>
+              <a routerLink="/payment">Comprar</a>
+            </div>
+          </div> <!-- micro -->
+          <div data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000" class="small">
+            <h3>Pequenas empresas</h3>
+            <div class="info">
+              <p>Vantagem 1</p>
+              <p>Vantagem 2</p>
+              <p>Vantagem 3</p>
+            </div>
+            <div class="buy">
+              <span>R$ 00,00</span>
+              <a routerLink="/payment">Comprar</a>
+            </div>
+          </div> <!-- small -->
+          <div data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000" class="medium">
+            <h3>Médias empresas</h3>
+            <div class="info">
+              <p>Vantagem 1</p>
+              <p>Vantagem 2</p>
+              <p>Vantagem 3</p>
+            </div>
+            <div class="buy">
+              <span>R$ 00,00</span>
+              <a routerLink="/payment">Comprar</a>
+            </div>
+          </div> <!-- medium -->
+
+          <div data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000" class="large">
+            <h3>Grandes empresas</h3>
+            <div class="info">
+              <p>Vantagem 1</p>
+              <p>Vantagem 2</p>
+              <p>Vantagem 3</p>
+            </div>
+            <div class="buy">
+              <span>R$ 00,00</span>
+              <a routerLink="/payment">Comprar</a>
+            </div>
+          </div> <!-- large -->
+
+        </div> <!-- select -->
+
+      </div> <!-- planos -->
+
+    </div> <!-- target --> 
+  </div> <!-- container -->
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+
+</body>
+</html>

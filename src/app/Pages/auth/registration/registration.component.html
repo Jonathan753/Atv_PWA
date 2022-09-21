@@ -1,0 +1,176 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-side">
+        <h2>DI2WIN SOBRE</h2>
+        <p>Nós da Di2win acreditamos que Transformação Digital não é a pura e simples adoção de novas tecnologias, 
+          mas sim a incorporação delas no modelo de negócio, fazendo assim uma revolução na forma de atender a seus clientes internos e externos.</p>
+          <p>
+            Ligados ao mundo digital por nossa essência, desenvolvemos produtos,  projetos e estudos acadêmicos nas áreas de Digital Twin, Automação de Processos, Tratamento de Imagens, OCR, Inteligência Artificial, Deep Learning, Business Intelligence,  e RPA.
+          </p>
+      </div>
+  
+      <div class="right-side">
+  
+        <img id="logo" src="../../assets/logo.png" alt="Di2Win Logo">
+  
+        <div class="login-box">
+  
+          <h2>Crie uma nova conta</h2>
+
+         <div class="select">
+           <p>Qual tipo de cadastro deseja realizar?</p>
+           <label>
+            <input class="empresa" [value]="0" [(ngModel)]="sh" name="sh" type="radio"[checked]="isChecked"/>
+            Empresa
+           </label>
+           <label>
+            <input class="pessoa" [value]="1" [(ngModel)]="sh" name="sh" type="radio"[checked]="!isChecked"/>
+            Pessoa Física
+           </label>
+         </div> 
+
+         <form (ngSubmit)="submit()" [formGroup]="registrationForm" #formDir="ngForm">
+
+          <div id="Cadastro" *ngIf="sh == 1">
+            <div class="input">
+              <label for="text">Nome do usuário</label>
+              <input type="text" name="text" placeholder="Digite seu usuário" formControlName="name">
+
+              <div *ngIf="name.invalid && (formDir.submitted || name.touched)" class="validation-error">
+                <p *ngIf="name.errors?.['required']">O nome deve ser preenchido.</p>
+                <p *ngIf="name.errors?.['pattern']">Apenas letras e espaços.</p>
+              </div>
+
+            </div>
+
+            <div class="input">
+              <label for="text">CPF</label>
+              <input type="text" name="text" placeholder="Digite seu CPF" formControlName="cpf" mask="000.000.000-00">
+
+              <div *ngIf="cpf.invalid && (formDir.submitted || cpf.touched)" class="validation-error">
+                <p *ngIf="cpf.errors?.['required']">O CPF deve ser preenchido.</p>
+              </div>
+            </div>
+
+            <div id="telefone">
+              <label for="telefone">Telefone</label>
+              <input type="tel" required formControlName="tel" placeholder="+00 (00) 00000-0000" mask='+00 (00) 0 0000-0000 || +00 (00) 0000-0000'>
+
+              <div *ngIf="tel.invalid && (formDir.submitted || tel.touched)" class="validation-error">
+                <p *ngIf="tel.errors?.['required']">O telefone deve ser preenchido.</p>
+              </div>
+
+            </div>
+
+            <div class="input">
+              <label for="email">E-mail</label>
+              <input type="email" name="email" placeholder="Digite seu e-mail" formControlName="email" ngModel [email]="true">
+
+              <div *ngIf="email.invalid && (formDir.submitted || email.touched)" class="validation-error">
+                <p *ngIf="email.errors?.['required']">O e-mail deve ser preenchido.</p>
+                <p *ngIf="email.errors?.['email']">E-mail inválido.</p>
+              </div>
+
+            </div>
+
+            <div class="input">
+              <label for="senha">Senha</label>
+              <input type="password" name="senha" placeholder="Senha" formControlName="password">
+
+              <div *ngIf="password.invalid && (formDir.submitted || password.touched)" class="validation-error">
+                <p *ngIf="password.errors?.['required']">A senha deve ser preenchido.</p>
+              </div>
+
+            </div>
+
+            <div class="input">
+              <label for="senha">Confirmação de senha</label>
+              <input type="password" name="senha" placeholder="Confirme sua senha">
+            </div>
+
+            <div class="btn">
+              <input id="submit" type="submit" name="enviar" value="Finalizar Cadastro" (click)="submit()">
+            </div>
+          </div>
+
+
+
+          <div id="Cadastro" *ngIf="sh == 0">
+
+            <div class="input">
+              <label for="text">Nome da empresa</label>
+              <input type="text" name="text" placeholder="Digite nome da sua empresa" formControlName="businessName">
+
+              <div *ngIf="businessName.invalid && (formDir.submitted || businessName.touched)" class="validation-error">
+                <p *ngIf="businessName.errors?.['required']">O nome da empresa deve ser preenchido.</p>
+              </div>
+
+            </div>
+
+            <div class="input">
+              <label for="text">CNPJ</label>
+              <input type="text" name="text" placeholder="Digite seu CNPJ" mask="00.000.000/0000-00" formControlName="CNPJ">
+
+              <div *ngIf="CNPJ.invalid && (formDir.submitted || CNPJ.touched)" class="validation-error">
+                <p *ngIf="CNPJ.errors?.['required']">O CNPJ deve ser preenchido.</p>
+              </div>
+
+            </div>
+
+            <div id="telefone">
+              <label for="telefone">Telefone</label>
+              <input type="tel" required mask='+00 (00) 0 0000-0000 || +00 (00) 0000-0000' placeholder="+00 (00) 0 0000-0000" formControlName="tel">
+
+              <div *ngIf="tel.invalid && (formDir.submitted || tel.touched)" class="validation-error">
+                <p *ngIf="tel.errors?.['required']">O telefone deve ser preenchido.</p>
+              </div>
+              
+            </div>
+
+            <div class="input">
+              <label for="email">E-mail</label>
+              <input type="email" name="email" placeholder="Digite seu e-mail" formControlName="email" ngModel [email]="true">
+
+              <div *ngIf="email.invalid && (formDir.submitted || email.touched)" class="validation-error">
+                <p *ngIf="email.errors?.['required']">O e-mail deve ser preenchido.</p>
+                <p *ngIf="email.errors?.['email']">E-mail inválido.</p>
+              </div>
+
+            </div>
+
+            <div class="input">
+              <label for="senha">Senha</label>
+              <input type="password" name="senha" placeholder="Senha" formControlName="password">
+
+              <div *ngIf="password.invalid && (formDir.submitted || password.touched)" class="validation-error">
+                <p *ngIf="password.errors?.['required']">A senha deve ser preenchido.</p>
+              </div>
+
+            </div>
+
+            <div class="input">
+              <label for="senha">Confirmação de senha</label>
+              <input type="password" name="senha" placeholder="Confirme sua senha">
+            </div>
+
+            <div class="btn">
+              <input id="submit" type="submit" name="enviar" value="Finalizar Cadastro">
+            </div>
+          </div>
+         </form>
+        
+        </div>
+  
+        <div class="sign-up">
+          <span>Ja tem uma conta? <a routerLink="/login">Faça seu Login </a></span>
+        </div>
+  
+      </div>
+    </div>
+  </body>
